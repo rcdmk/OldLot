@@ -11,8 +11,8 @@ namespace OldLot.Dominio.Interfaces.Repositorios
     public interface IRepositorioBase<TEntity> : IDisposable where TEntity : class
     {
         TEntity ObterPorId(int id);
-        ICollection<TEntity> ObterTodos();
-        ICollection<TEntity> ObterLista(Expression<Func<TEntity, bool>> filtro);
+        IEnumerable<TEntity> ObterTodos();
+        IEnumerable<TEntity> ObterLista(Expression<Func<TEntity, bool>> filtro);
 
         void Incluir(TEntity entidade);
         void Atualizar(TEntity entidade);
