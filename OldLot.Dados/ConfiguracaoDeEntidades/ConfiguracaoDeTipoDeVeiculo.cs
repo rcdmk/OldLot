@@ -11,7 +11,8 @@ namespace OldLot.Dados.ConfiguracaoDeEntidades
     {
         public ConfiguracaoDeTipoDeVeiculo() : base()
         {
-
+            Property(t => t.Habilidades)
+                .HasMaxLength(255);
         }
     }
 }

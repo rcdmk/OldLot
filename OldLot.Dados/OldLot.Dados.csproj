@@ -53,6 +53,7 @@
     <Compile Include="ConfiguracaoDeEntidades\ConfiguracaoDeFabricante.cs" />
     <Compile Include="ConfiguracaoDeEntidades\ConfiguracaoDeTipoDeVeiculo.cs" />
     <Compile Include="ConfiguracaoDeEntidades\ConfiguracaoDeVeiculo.cs" />
+    <Compile Include="Contextos\ContextoOldLot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
