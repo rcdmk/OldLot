@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace OldLot.Dominio.Entidades
 {
-    public class EntidadeBase<T> where T : struct
+    public class EntidadeBase
     {
-        public T Id { get; set; }
+        public int Id { get; set; }
+        public string Nome { get; set; }
     }
 }

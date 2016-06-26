@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace OldLot.Dominio.Entidades
 {
-    public class Fabricante : EntidadeBase<int>
+    public class Fabricante : EntidadeBase
     {
-        public string Nome { get; set; }
     }
 }

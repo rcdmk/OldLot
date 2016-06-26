@@ -35,11 +35,14 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\EntidadeBase.cs" />
+    <Compile Include="Entidades\Fabricante.cs" />
+    <Compile Include="Entidades\TipoDeVeiculo.cs" />
+    <Compile Include="Entidades\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Repositorios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
