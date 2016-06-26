@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OldLot.Dominio.Interfaces.Repositorios
 {
-    public interface IRepositorioBase<TEntity> : IDisposable where TEntity : EntidadeBase
+    public interface IRepositorioBase<TEntity> : IDisposable where TEntity : class
     {
         TEntity ObterPorId(int id);
         ICollection<TEntity> ObterTodos();
