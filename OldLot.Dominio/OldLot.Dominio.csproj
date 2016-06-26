@@ -43,11 +43,17 @@
     <Compile Include="Interfaces\Repositorios\IRepositorioFabricante.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioTipoDeVeiculo.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioVeiculo.cs" />
+    <Compile Include="Interfaces\Servicos\IServicoBase.cs" />
+    <Compile Include="Interfaces\Servicos\IServicoFabricante.cs" />
+    <Compile Include="Interfaces\Servicos\IServicoTipoDeVeiculo.cs" />
+    <Compile Include="Interfaces\Servicos\IServicoVeiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\ServicoBase.cs" />
+    <Compile Include="Servicos\ServicoFabricante.cs" />
+    <Compile Include="Servicos\ServicoTipoDeVeiculo.cs" />
+    <Compile Include="Servicos\ServicoVeiculo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\Servicos\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
