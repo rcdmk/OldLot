@@ -56,6 +56,9 @@
     <Compile Include="Contextos\ContextoOldLot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
+    <Compile Include="Repositorios\RepositorioFabricante.cs" />
+    <Compile Include="Repositorios\RepositorioTipoDeVeiculo.cs" />
+    <Compile Include="Repositorios\RepositorioVeiculo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OldLot.Dominio\OldLot.Dominio.csproj">

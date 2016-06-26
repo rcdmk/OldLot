@@ -11,5 +11,6 @@ namespace OldLot.Dominio.Entidades
         public int Ano { get; set; }
 
         public virtual Fabricante Fabricante { get; set; }
+        public virtual TipoDeVeiculo Tipo { get; set; }
     }
 }

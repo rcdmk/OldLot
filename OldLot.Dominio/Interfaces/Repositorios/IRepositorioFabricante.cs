@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OldLot.Dominio.Interfaces.Repositorios
 {
-    interface IRepositorioFabricante : IRepositorioBase<Fabricante>
+    public interface IRepositorioFabricante : IRepositorioBase<Fabricante>
     {
 
     }
