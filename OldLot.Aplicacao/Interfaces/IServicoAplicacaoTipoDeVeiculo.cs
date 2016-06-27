@@ -2,7 +2,7 @@
 
 namespace OldLot.Aplicacao.Interfaces
 {
-    interface IServicoAplicacaoTipoDeVeiculo : IServicoAplicacaoBase<TipoDeVeiculo>
+    public interface IServicoAplicacaoTipoDeVeiculo : IServicoAplicacaoBase<TipoDeVeiculo>
     {
     }
 }

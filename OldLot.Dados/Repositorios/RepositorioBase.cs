@@ -1,20 +1,19 @@
-﻿using OldLot.Dominio.Interfaces.Repositorios;
+﻿using OldLot.Dados.Contextos;
+using OldLot.Dominio.Interfaces.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq.Expressions;
 
 namespace OldLot.Dados.Repositorios
 {
     public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : class
     {
-        protected DbContext Db;
+        protected ContextoOldLot Db;
         protected DbSet<TEntity> Colecao;
 
-        public RepositorioBase(DbContext dbContext)
+        public RepositorioBase(ContextoOldLot dbContext)
         {
             this.Db = dbContext;
             this.Colecao = dbContext.Set<TEntity>();

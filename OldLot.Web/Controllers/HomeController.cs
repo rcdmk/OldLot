@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OldLot.Aplicacao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,22 +9,15 @@ namespace OldLot.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private ServicoAplicacaoVeiculo servico;
+
+        public HomeController(ServicoAplicacaoVeiculo servico)
+        {
+            this.servico = servico;
+        }
+
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
