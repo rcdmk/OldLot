@@ -1,4 +1,6 @@
-﻿using OldLot.Aplicacao;
+﻿using AutoMapper;
+using OldLot.Aplicacao;
+using OldLot.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +20,9 @@ namespace OldLot.Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var veiculos = Mapper.Map<IEnumerable<VeiculoViewModel>>(servico.ObterTodos());
+
+            return View(veiculos);
         }
     }
 }

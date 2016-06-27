@@ -8,5 +8,6 @@ namespace OldLot.Dominio.Entidades
 {
     public class Fabricante : EntidadeBase
     {
+        public virtual IEnumerable<Veiculo> Veiculos { get; set; }
     }
 }

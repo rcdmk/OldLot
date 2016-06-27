@@ -9,5 +9,7 @@ namespace OldLot.Dominio.Entidades
     public class TipoDeVeiculo : EntidadeBase
     {
         public string Habilidades { get; set; }
+
+        public virtual IEnumerable<Veiculo> Veiculos { get; set; }
     }
 }
