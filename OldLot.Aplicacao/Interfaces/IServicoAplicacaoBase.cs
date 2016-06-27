@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace OldLot.Dominio.Interfaces.Repositorios
+namespace OldLot.Aplicacao.Interfaces
 {
-    public interface IRepositorioBase<TEntity> : IDisposable where TEntity : class
+    public interface IServicoAplicacaoBase<TEntity> : IDisposable where TEntity : class
     {
         TEntity ObterPorId(int id);
+
         IEnumerable<TEntity> ObterTodos();
+
         IEnumerable<TEntity> ObterLista(Expression<Func<TEntity, bool>> filtro);
 
         void Incluir(TEntity entidade);
