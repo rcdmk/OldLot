@@ -77,6 +77,17 @@ namespace OldLot.Web.Controllers
             return RedirectToAction("Index");
         }
 
+
+        // GET: Veiculo/Excluir/id
+        public ActionResult Excluir(int id)
+        {
+            servicoVeiculos.ExcluirPorId(id);
+
+            return RedirectToAction("Index");
+        }
+
+        #region Utils
+
         private SelectList ListaFabricantes(int? selecionado = null)
         {
             return new SelectList(servicoFabricantes.ObterTodos(), "Id", "Nome", selecionado.ToString());
@@ -86,5 +97,7 @@ namespace OldLot.Web.Controllers
         {
             return new SelectList(servicoTipos.ObterTodos(), "Id", "Nome", selecionado.ToString());
         }
+
+        #endregion
     }
 }
