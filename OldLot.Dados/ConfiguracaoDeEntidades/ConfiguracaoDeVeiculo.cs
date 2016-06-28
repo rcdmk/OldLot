@@ -14,6 +14,20 @@ namespace OldLot.Dados.ConfiguracaoDeEntidades
         {
             Property(v => v.Ano)
                 .IsRequired();
+
+            HasRequired<Fabricante>(v => v.Fabricante)
+                .WithMany(f => (ICollection<Veiculo>)f.Veiculos)
+                .Map(mc =>
+                {
+                    mc.MapKey("IdFabricante");
+                });
+
+            HasRequired<TipoDeVeiculo>(v => v.Tipo)
+                .WithMany(t => (ICollection<Veiculo>)t.Veiculos)
+                .Map(mc =>
+                {
+                    mc.MapKey("IdTipoDeVeiculo");
+                });
         }
     }
 }
