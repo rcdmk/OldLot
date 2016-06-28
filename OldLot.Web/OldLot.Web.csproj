@@ -167,6 +167,7 @@
     <Compile Include="AutoMapper\DominioParaViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelParaDominioMappingProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +177,10 @@
     <Compile Include="ViewModels\VeiculoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\OldLot.mdf" />
+    <Content Include="App_Data\OldLot_log.ldf">
+      <DependentUpon>OldLot.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -208,10 +213,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Veiculo\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

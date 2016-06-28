@@ -27,7 +27,7 @@ namespace OldLot.Web.ViewModels
         [Display(Name = "Tipo")]
         public int IdTipoDeVeiculo { get; set; }
 
-        public virtual FabricanteViewModel Fabricante { get; set; }
-        public virtual TipoDeVeiculoViewModel Tipo { get; set; }
+        public virtual string Fabricante { get; set; }
+        public virtual string Tipo { get; set; }
     }
 }
