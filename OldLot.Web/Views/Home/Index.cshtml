@@ -1,47 +1,23 @@
-﻿@model IEnumerable<OldLot.Web.ViewModels.VeiculoViewModel>
-@{
-    ViewBag.Title = "Coleção";
+﻿@{
+    ViewBag.Title = "Home";
 }
 
-<div class="page-header">
-    <h1 class="text-info">OldLot</h1>
-    <p class="lead">A sua coleção de carros antigos.</p>
+<div class="jumbotron">
+    <h1>OldLot</h1>
+    <p>A sua coleção de veículos antigos</p>
 </div>
 
 <div class="row">
-    <div class="col-md-12">
-        <h2>Coleção Atual</h2>
-
-        <div class="well well-sm">
-            @Html.ActionLink("Incluir", "Incluir", null, new { @class = "btn btn-primary" })
-        </div>
-        <div class="table-responsive">
-            <table id="tbl" class="table table-striped table-responsive">
-                <thead>
-                    <tr class="active text-info">
-                        <th class="col-md-1 text-right">#</th>
-                        <th>Nome</th>
-                        <th>Fabricante</th>
-                        <th>Tipo</th>
-                        <th class="col-md-1 text-right">Ano</th>
-                        <th class="col-md-1">&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-right">1</td>
-                        <td>Opala Gran Luxo 6cc</td>
-                        <td>Chevrollet</td>
-                        <td>Passeio</td>
-                        <td class="text-right">1973</td>
-                        <td class="text-center">
-                            <a href="#ver" title="visualizar"><i class="glyphicon glyphicon-eye-open text-primary"></i></a>
-                            <a href="#alterar" title="alterar"><i class="glyphicon glyphicon-edit text-success"></i></a>
-                            <a href="#ver" title="visualizar"><i class="glyphicon glyphicon-trash text-danger"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <div class="col-md-3">
+        <h3>Administre sua coleção</h3>
+        <p>Cadastre seus veículos para registrar sua coleção.</p>
+    </div>
+    <div class="col-md-9">
+        <h3>Recursos</h3>
+        <ul>
+            <li>Cadastro de fabricantes</li>
+            <li>Cadastro de tipos de veículo</li>
+            <li>...</li>
+        </ul>
     </div>
 </div>
