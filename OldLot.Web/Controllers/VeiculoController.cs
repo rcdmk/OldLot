@@ -22,5 +22,23 @@ namespace OldLot.Web.Controllers
 
             return View(veiculos);
         }
+
+        // GET: Veiculo/id
+        public ActionResult Visualizar(int id)
+        {
+            var veiculo = Mapper.Map<VeiculoViewModel>(servico.ObterPorId(id));
+
+            var parcial = Request["parcial"] == "s";
+            ViewBag.parcial = parcial;
+
+            if (parcial)
+            {
+                return PartialView(veiculo);
+            }
+            else
+            {
+                return View(veiculo);
+            }
+        }
     }
 }

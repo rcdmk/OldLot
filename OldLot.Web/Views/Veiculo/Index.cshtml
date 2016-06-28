@@ -9,10 +9,6 @@
 
         <div class="well well-sm">
             @Html.ActionLink("Novo", "Incluir", "Veiculo", null, new { id = "btnIncluir", @class = "btn btn-primary" })
-            @using (Html.BeginForm("Incluir", "Veiculo", FormMethod.Post, new { id = "frmIncluir", @class = "oculto" }))
-            {
-                <button id="btnCancelar" class="btn btn-danger">Cancelar</button>
-            }
         </div>
         <div class="table-responsive">
             <table id="tbl" class="table table-striped table-responsive">
@@ -36,9 +32,9 @@
                                 <td>@Html.DisplayFor(mi => item.Tipo)</td>
                                 <td class="text-right">@Html.DisplayFor(mi => item.Ano)</td>
                                 <td class="text-center">
-                                    <a href="@Url.Action("Visualizar", "Veiculo", new { id = item.Id })" title="visualizar"><i class="glyphicon glyphicon-eye-open text-primary"></i></a>
-                                    <a href="@Url.Action("Alterar", "Veiculo", new { id = item.Id })" title="alterar"><i class="glyphicon glyphicon-edit text-success"></i></a>
-                                    <a href="@Url.Action("Excluir", "Veiculo", new { id = item.Id })" title="visualizar"><i class="glyphicon glyphicon-trash text-danger"></i></a>
+                                    <a href="@Url.Action("Visualizar", "Veiculo", new { id = item.Id })" title="visualizar" class="visualizar"><i class="glyphicon glyphicon-eye-open text-primary"></i></a>
+                                    <a href="@Url.Action("Alterar", "Veiculo", new { id = item.Id })" title="alterar" class="alterar"><i class="glyphicon glyphicon-edit text-success"></i></a>
+                                    <a href="@Url.Action("Excluir", "Veiculo", new { id = item.Id })" title="excluir" class="excluir"><i class="glyphicon glyphicon-trash text-danger"></i></a>
                                 </td>
                             </tr>
                         }
@@ -53,26 +49,7 @@
             </table>
             @section scripts
             {
-                <script type="text/javascript">
-                    $(function () {
-                        var btnIncluir = $("#btnIncluir");
-                        var frmIncluir = $("#frmIncluir");
-
-                        btnIncluir.on("click", function (e) {
-                            $(this).slideUp("fast");
-                            frmIncluir.slideDown("fast");
-
-                            e.preventDefault();
-                        });
-
-                        $("#btnCancelar").on("click", function (e) {
-                            frmIncluir.slideUp("fast");
-                            btnIncluir.slideDown("fast");
-
-                            e.preventDefault();
-                        });
-                    });
-                </script>
+                @Scripts.Render("~/bundles/site")
             }
         </div>
     </div>
