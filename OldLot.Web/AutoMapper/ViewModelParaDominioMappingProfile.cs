@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using OldLot.Dominio.Entidades;
 using OldLot.Web.ViewModels;
-using System.Linq;
 
 namespace OldLot.Web.AutoMapper
 {
@@ -17,8 +16,12 @@ namespace OldLot.Web.AutoMapper
 
         protected override void Configure()
         {
-            CreateMap<VeiculoViewModel, Veiculo>();
+            CreateMap<VeiculoViewModel, Veiculo>()
+                .ForMember(m => m.Fabricante, v => v.MapFrom(m => new Fabricante() { Id = m.IdFabricante, Nome = m.Fabricante }))
+                .ForMember(m => m.Tipo, v => v.MapFrom(m => new TipoDeVeiculo() { Id = m.IdTipoDeVeiculo, Nome = m.Tipo }));
+
             CreateMap<FabricanteViewModel, Fabricante>();
+            CreateMap<TipoDeVeiculoViewModel, TipoDeVeiculo>();
         }
     }
 }

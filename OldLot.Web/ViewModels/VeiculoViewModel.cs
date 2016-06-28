@@ -16,7 +16,6 @@ namespace OldLot.Web.ViewModels
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(4, MinimumLength = 4)]
         public int Ano { get; set; }
 
         [Required]
@@ -27,7 +26,10 @@ namespace OldLot.Web.ViewModels
         [Display(Name = "Tipo")]
         public int IdTipoDeVeiculo { get; set; }
 
+        [Editable(false)]
         public virtual string Fabricante { get; set; }
+
+        [Editable(false)]
         public virtual string Tipo { get; set; }
     }
 }

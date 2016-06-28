@@ -216,6 +216,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Veiculo\Index.cshtml" />
     <Content Include="Views\Veiculo\Visualizar.cshtml" />
+    <Content Include="Views\Veiculo\Incluir.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
