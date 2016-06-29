@@ -16,7 +16,9 @@ namespace OldLot.API.AutoMapper
 
         protected override void Configure()
         {
-            CreateMap<VeiculoModel, Veiculo>();
+            CreateMap<VeiculoModel, Veiculo>()
+                .ForMember(p => p.Id, m => m.Ignore());
+
             CreateMap<FabricanteModel, Fabricante>();
             CreateMap<TipoDeVeiculoModel, TipoDeVeiculo>();
         }
