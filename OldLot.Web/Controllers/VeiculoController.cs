@@ -74,6 +74,7 @@ namespace OldLot.Web.Controllers
 
             servicoVeiculos.Incluir(veiculoNovo);
 
+            TempData["sucesso"] = "Incluído com sucesso!";
             return RedirectToAction("Index");
         }
 
@@ -120,6 +121,7 @@ namespace OldLot.Web.Controllers
 
             servicoVeiculos.Atualizar(veiculoAlterado);
 
+            TempData["sucesso"] = "Alterado com sucesso!";
             return RedirectToAction("Index");
         }
 
@@ -129,6 +131,7 @@ namespace OldLot.Web.Controllers
         {
             servicoVeiculos.ExcluirPorId(id);
 
+            TempData["sucesso"] = "Excluído com sucesso!";
             return RedirectToAction("Index");
         }
 

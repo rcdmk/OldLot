@@ -26,6 +26,11 @@
         </div>
     </div>
     <div class="container body-content">
+        @if (TempData["sucesso"] != null)
+        {
+            <div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> @Html.Raw(TempData["sucesso"])</div>
+        }
+
         @RenderBody()
         <hr />
         <footer>
