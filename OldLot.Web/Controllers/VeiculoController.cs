@@ -49,8 +49,8 @@ namespace OldLot.Web.Controllers
         // GET: Veiculo/Incluir
         public ActionResult Incluir()
         {
-            ViewBag.IdFabricante = ListaFabricantes();
-            ViewBag.IdTipoDeVeiculo = ListaTipos();
+            ViewBag.IdFabricante = MontarListaFabricantes();
+            ViewBag.IdTipoDeVeiculo = MontarListaTiposDeVeiculo();
 
             return View();
         }
@@ -61,8 +61,8 @@ namespace OldLot.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.IdFabricante = ListaFabricantes(veiculo.IdFabricante);
-                ViewBag.IdTipoDeVeiculo = ListaTipos(veiculo.IdTipoDeVeiculo);
+                ViewBag.IdFabricante = MontarListaFabricantes(veiculo.IdFabricante);
+                ViewBag.IdTipoDeVeiculo = MontarListaTiposDeVeiculo(veiculo.IdTipoDeVeiculo);
 
                 return View(veiculo);
             }
@@ -73,6 +73,52 @@ namespace OldLot.Web.Controllers
             veiculoNovo.Tipo = servicoTipos.ObterPorId(veiculo.IdTipoDeVeiculo);
 
             servicoVeiculos.Incluir(veiculoNovo);
+
+            return RedirectToAction("Index");
+        }
+
+        // GET: Veiculo/Alterar/id
+        public ActionResult Alterar(int id)
+        {
+            var veiculo = Mapper.Map<VeiculoViewModel>(servicoVeiculos.ObterPorId(id));
+
+            if (veiculo == null) return HttpNotFound();
+
+            ViewBag.IdFabricante = MontarListaFabricantes(veiculo.IdFabricante);
+            ViewBag.IdTipoDeVeiculo = MontarListaTiposDeVeiculo(veiculo.IdTipoDeVeiculo);
+
+            return View(veiculo);
+        }
+
+        // POST: Veiculo/Alterar/id
+        [HttpPost]
+        public ActionResult Alterar(int id, VeiculoViewModel veiculo)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.IdFabricante = MontarListaFabricantes(veiculo.IdFabricante);
+                ViewBag.IdTipoDeVeiculo = MontarListaTiposDeVeiculo(veiculo.IdTipoDeVeiculo);
+
+                return View(veiculo);
+            }
+
+            var veiculoAlterado = servicoVeiculos.ObterPorId(id);
+
+            if (veiculoAlterado == null) return HttpNotFound();
+
+            veiculoAlterado = Mapper.Map<VeiculoViewModel, Veiculo>(veiculo, veiculoAlterado);
+
+            if (veiculoAlterado.Fabricante.Id != veiculo.IdFabricante)
+            {
+                veiculoAlterado.Fabricante = servicoFabricantes.ObterPorId(veiculo.IdFabricante);
+            }
+
+            if (veiculoAlterado.Tipo.Id != veiculo.IdTipoDeVeiculo)
+            {
+                veiculoAlterado.Tipo = servicoTipos.ObterPorId(veiculo.IdTipoDeVeiculo);
+            }
+
+            servicoVeiculos.Atualizar(veiculoAlterado);
 
             return RedirectToAction("Index");
         }
@@ -88,12 +134,12 @@ namespace OldLot.Web.Controllers
 
         #region Utils
 
-        private SelectList ListaFabricantes(int? selecionado = null)
+        private SelectList MontarListaFabricantes(int? selecionado = null)
         {
             return new SelectList(servicoFabricantes.ObterTodos(), "Id", "Nome", selecionado.ToString());
         }
 
-        private SelectList ListaTipos(int? selecionado = null)
+        private SelectList MontarListaTiposDeVeiculo(int? selecionado = null)
         {
             return new SelectList(servicoTipos.ObterTodos(), "Id", "Nome", selecionado.ToString());
         }

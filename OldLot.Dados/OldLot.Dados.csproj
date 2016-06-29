@@ -54,6 +54,7 @@
     <Compile Include="ConfiguracaoDeEntidades\ConfiguracaoDeTipoDeVeiculo.cs" />
     <Compile Include="ConfiguracaoDeEntidades\ConfiguracaoDeVeiculo.cs" />
     <Compile Include="Contextos\ContextoOldLot.cs" />
+    <Compile Include="Utils\FixReferenciaEF.cs" />
     <Compile Include="Migrations\201606270351514_InitialCreate.cs" />
     <Compile Include="Migrations\201606270351514_InitialCreate.Designer.cs">
       <DependentUpon>201606270351514_InitialCreate.cs</DependentUpon>

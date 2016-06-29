@@ -10,8 +10,8 @@ namespace OldLot.Dados.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
             ContextKey = "OldLot.Dados.Contextos.ContextoOldLot";
+            AutomaticMigrationsEnabled = false;
             // AutomaticMigrationDataLossAllowed = true;
         }
 

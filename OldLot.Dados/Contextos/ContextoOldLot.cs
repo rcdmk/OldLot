@@ -1,4 +1,5 @@
 ﻿using OldLot.Dados.ConfiguracaoDeEntidades;
+using OldLot.Dados.Migrations;
 using OldLot.Dominio.Entidades;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -10,6 +11,7 @@ namespace OldLot.Dados.Contextos
         public ContextoOldLot()
             : base("OldLot") // Nome da connection string padrão
         {
+            Database.SetInitializer<ContextoOldLot>(new MigrateDatabaseToLatestVersion<ContextoOldLot, Configuration>());
         }
 
         public DbSet<Veiculo> Veiculos { get; set; }

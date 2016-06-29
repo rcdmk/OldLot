@@ -10,5 +10,27 @@ namespace OldLot.Dados.Repositorios
         {
 
         }
+
+        public override void Incluir(Veiculo entidade)
+        {
+            if (entidade != null)
+            {
+                if (entidade.Fabricante != null && entidade.Fabricante.Id != 0) Db.Fabricantes.Attach(entidade.Fabricante);
+                if (entidade.Tipo != null && entidade.Tipo.Id != 0) Db.TiposDeVeiculo.Attach(entidade.Tipo);
+            }
+
+            base.Incluir(entidade);
+        }
+
+        public override void Atualizar(Veiculo entidade)
+        {
+            if (entidade != null)
+            {
+                if (entidade.Fabricante != null && entidade.Fabricante.Id != 0) Db.Fabricantes.Attach(entidade.Fabricante);
+                if (entidade.Tipo != null && entidade.Tipo.Id != 0) Db.TiposDeVeiculo.Attach(entidade.Tipo);
+            }
+
+            base.Atualizar(entidade);
+        }
     }
 }

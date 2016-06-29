@@ -18,7 +18,9 @@ namespace OldLot.Web.AutoMapper
         protected override void Configure()
         {
             CreateMap<Veiculo, VeiculoViewModel>()
+                .ForMember(v => v.IdFabricante, m => m.MapFrom(d => d.Fabricante.Id))
                 .ForMember(v => v.Fabricante, m => m.MapFrom(d => d.Fabricante.Nome))
+                .ForMember(v => v.IdTipoDeVeiculo, m => m.MapFrom(d => d.Tipo.Id))
                 .ForMember(v => v.Tipo, m => m.MapFrom(d => d.Tipo.Nome));
 
             CreateMap<Fabricante, FabricanteViewModel>()

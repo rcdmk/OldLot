@@ -33,7 +33,7 @@
                                 <td class="text-right">@Html.DisplayFor(mi => item.Ano)</td>
                                 <td class="text-center">
                                     <a href="@Url.Action("Visualizar", "Veiculo", new { id = item.Id })" title="visualizar" class="visualizar"><i class="glyphicon glyphicon-eye-open text-primary"></i></a>
-                                    <a href="#@Url.Action("Alterar", "Veiculo", new { id = item.Id })" title="alterar" class="alterar disabled"><i class="glyphicon glyphicon-edit text-success"></i></a>
+                                    <a href="@Url.Action("Alterar", "Veiculo", new { id = item.Id })" title="alterar" class="alterar disabled"><i class="glyphicon glyphicon-edit text-success"></i></a>
                                     <a href="@Url.Action("Excluir", "Veiculo", new { id = item.Id })" title="excluir" class="excluir"><i class="glyphicon glyphicon-trash text-danger"></i></a>
                                 </td>
                             </tr>
@@ -44,13 +44,9 @@
                         <tr>
                             <td colspan="5" class="text-muted text-center">Nenhum registro disponível.</td>
                         </tr>
-                        }
+                    }
                 </tbody>
             </table>
-            @section scripts
-            {
-                @Scripts.Render("~/bundles/site")
-            }
         </div>
     </div>
 </div>

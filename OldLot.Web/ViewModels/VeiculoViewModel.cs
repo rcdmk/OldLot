@@ -27,9 +27,9 @@ namespace OldLot.Web.ViewModels
         public int IdTipoDeVeiculo { get; set; }
 
         [Editable(false)]
-        public virtual string Fabricante { get; set; }
+        public string Fabricante { get; set; }
 
         [Editable(false)]
-        public virtual string Tipo { get; set; }
+        public string Tipo { get; set; }
     }
 }

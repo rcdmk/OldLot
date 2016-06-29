@@ -1,10 +1,12 @@
 ﻿using OldLot.Dados.Contextos;
 using OldLot.Dominio.Interfaces.Repositorios;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 
 namespace OldLot.Dados.Repositorios
 {
@@ -19,24 +21,25 @@ namespace OldLot.Dados.Repositorios
             this.Colecao = dbContext.Set<TEntity>();
         }
 
-        public void Atualizar(TEntity entidade)
+        public virtual void Atualizar(TEntity entidade)
         {
+            if (Db.Entry(entidade).State == EntityState.Detached) Colecao.Attach(entidade);
             Db.Entry(entidade).State = EntityState.Modified;
             Db.SaveChanges();
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             Db.Dispose();
         }
 
-        public void Excluir(TEntity entidade)
+        public virtual void Excluir(TEntity entidade)
         {
             Colecao.Remove(entidade);
             Db.SaveChanges();
         }
 
-        public void ExcluirPorId(int id)
+        public virtual void ExcluirPorId(int id)
         {
             var entidade = Colecao.Find(id);
             if (entidade != null)
@@ -46,23 +49,23 @@ namespace OldLot.Dados.Repositorios
             }
         }
 
-        public void Incluir(TEntity entidade)
+        public virtual void Incluir(TEntity entidade)
         {
             Colecao.Add(entidade);
             Db.SaveChanges();
         }
 
-        public IEnumerable<TEntity> ObterLista(Expression<Func<TEntity, bool>> filtro)
+        public virtual IEnumerable<TEntity> ObterLista(Expression<Func<TEntity, bool>> filtro)
         {
             return Colecao.Where(filtro).ToList();
         }
 
-        public TEntity ObterPorId(int id)
+        public virtual TEntity ObterPorId(int id)
         {
             return Colecao.Find(id);
         }
 
-        public IEnumerable<TEntity> ObterTodos()
+        public virtual IEnumerable<TEntity> ObterTodos()
         {
             return Colecao.ToList();
         }
