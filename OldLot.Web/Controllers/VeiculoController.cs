@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using OldLot.Aplicacao;
+using OldLot.Aplicacao.Interfaces;
 using OldLot.Dominio.Entidades;
 using OldLot.Web.ViewModels;
 using System.Collections.Generic;
@@ -9,11 +9,11 @@ namespace OldLot.Web.Controllers
 {
     public class VeiculoController : Controller
     {
-        private ServicoAplicacaoVeiculo servicoVeiculos;
-        private ServicoAplicacaoFabricante servicoFabricantes;
-        private ServicoAplicacaoTipoDeVeiculo servicoTipos;
+        private IServicoAplicacaoVeiculo servicoVeiculos;
+        private IServicoAplicacaoFabricante servicoFabricantes;
+        private IServicoAplicacaoTipoDeVeiculo servicoTipos;
 
-        public VeiculoController(ServicoAplicacaoVeiculo servicoVeiculos, ServicoAplicacaoFabricante servicoFabricantes, ServicoAplicacaoTipoDeVeiculo servicoTipos)
+        public VeiculoController(IServicoAplicacaoVeiculo servicoVeiculos, IServicoAplicacaoFabricante servicoFabricantes, IServicoAplicacaoTipoDeVeiculo servicoTipos)
         {
             this.servicoVeiculos = servicoVeiculos;
             this.servicoFabricantes = servicoFabricantes;
